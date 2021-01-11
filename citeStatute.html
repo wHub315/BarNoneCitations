@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Details</title>
+    <!-- <link rel="stylesheet" href="popup.css"> -->
+    <!--<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">-->
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+        @import url('https://fonts.googleapis.com/css?family=Segoe+UI:400');
+        * {
+        box-sizing: border-box;
+        }
+        .bar-none-citations {
+            background-color: transparent;
+            color: var(--alto);
+            font-size: 18px;
+            height: 26px;
+            left: calc(25.84% - 39px);
+            line-height: 18px;
+            position: absolute;
+            text-align: left;
+            top: 11px;
+            white-space: nowrap;
+            width: 151px;
+        }
+        .border-class-1 {
+            border: 1px solid var(--dove-gray);
+        }
+        .component-2-2 {
+            background-color: transparent;
+            height: calc(100.00% - 14px);
+            left: 37px;
+            position: absolute;
+            top: 7px;
+            width: 148px;
+        }
+        .copy-paste-citation {
+            background-color: transparent;
+            bottom: -4px;
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: 10px;
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            white-space: nowrap;
+            width: 150px;
+        }
+        .font-class-1 {
+            font-family: 'Segoe UI', Helvetica, Arial, serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+        .generate-citation {
+            bottom: calc(24.10% - 6px);
+            color: white;
+            font-size: 16px;
+            height: 23px;
+            line-height: 16px;
+            position: absolute;
+            right: calc(49.15% - 62px);
+            text-align: left;
+            white-space: nowrap;
+            width: 126px;
+        }
+        .group-18 {
+            background-color: transparent;
+            flex-shrink: 0;
+            height: 465px;
+            position: relative;
+            width: 362px;
+        }
+        .group-6 {
+            background-color: transparent;
+            bottom: calc(46.15% - 10px);
+            height: 22px;
+            position: absolute;
+            right: 16px;
+            width: 8px;
+        }
+        .ddMenu {
+            background-color: var(--concrete);
+            border: 1px solid var(--dove-gray);
+            height: 35px;
+            left: 22px;
+            position: absolute;
+            top: 52px;
+            width: calc(100.00% - 42px);
+        }
+        .le2d {
+            background-color: transparent;
+            bottom: calc(36.91% - 8px);
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            line-height: 15px;
+            position: absolute;
+            right: calc(35.31% - 14px);
+            text-align: left;
+            white-space: nowrap;
+            width: 40px;
+        }
+        .legal-icon {
+            background-color: transparent;
+            height: 39px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 41px;
+        }
+        .title {
+            background-color: transparent;
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: 30px;
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            top: calc(25.85% - 6px);
+            white-space: nowrap;
+            width: 45px;
+        }
+        .code {
+            background-color: transparent;
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            line-height: 15px;
+            position: absolute;
+            left: 10px;
+            text-align: left;
+            top: calc(35.10% + 40px);
+            white-space: nowrap;
+            width: 37px;
+        }
+        .polygon-1 {
+            background-color: transparent;
+            height: 9px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 100%;
+        }
+        .polygon-2 {
+            background-color: transparent;
+            bottom: 0px;
+            height: 9px;
+            position: absolute;
+            width: 100%;
+        }
+        .section-TB {
+            background-color: white;
+            height: 31px;
+            left: 100px;
+            position: absolute;
+            top: calc(35.25% - 11px);
+            width: 74px;
+        }
+        .year-TB{
+            background-color: white;
+            height: 31px;
+            left: 100px;
+            position: absolute;
+            top: calc(45.62% + 30px);
+            width: 73px;
+        }
+        .submit-rectangle {
+            background-color: blue;
+            bottom: calc(22.46% - 11px);
+            height: 45px;
+            position: absolute;
+            right: calc(49.18% - 45px);
+            width: 145px;
+        }
+        .title-TB {
+            background-color: white;
+            height: 31px;
+            position: absolute;
+            left: 100px;
+            top: calc(24.88% - 8px);
+            width: 200px;
+        }
+        .code-TB {
+            background-color: white;
+            height: 31px;
+            position: absolute;
+            left: 100px;
+            top: calc(35.25% + 32px);
+            width: 73px;
+        }
+        .s-ct {
+            background-color: transparent;
+            bottom: calc(36.91% - 8px);
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: calc(42.17% - 12px);
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            white-space: nowrap;
+            width: 28px;
+        }
+        .court-style {
+            background-color: transparent;
+            color: black;
+            font-size: 16px;
+            height: calc(100.00% + 2px);
+            left: 10px;
+            line-height: 16px;
+            position: absolute;
+            text-align: left;
+            white-space: nowrap;
+            width: calc(100.00% + 2px);
+        }
+        .us {
+            background-color: transparent;
+            bottom: calc(36.91% - 8px);
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: calc(21.92% - 6px);
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            white-space: nowrap;
+            width: 27px;
+        }
+        .section {
+            background-color: transparent;
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: 30px;
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            top: calc(36.00% - 8px);
+            white-space: nowrap;
+            width: 55px;
+        }
+        .year {
+            background-color: transparent;
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: 46px;
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            top: calc(46.16% + 32px);
+            white-space: nowrap;
+            width: 33px;
+        }
+        #citation {
+            bottom: -40px;
+            color: black;
+            font-size: 15px;
+            height: 22px;
+            left: 20px;
+            line-height: 15px;
+            position: absolute;
+            text-align: left;
+            white-space: nowrap;
+            width: 330px;
+        }
+        :root {
+            --alto: rgba(226,218,218,1.0);
+            --concrete: rgba(242,242,242,1.0);
+            --mahogany: rgba(80,0,0,1.0);
+            --dove-gray: rgba(112,112,112,1.0);
+        }
+
+        .border-class-1 {
+            border: 1px solid var(--dove-gray);
+        }
+        .rectangle-1 {
+            flex-shrink: 0;
+            height: 568px;
+            width: 382px;
+        }
+        .headerRectangle {
+            background-color: var(--mahogany);
+            flex-shrink: 0;
+            height: 40px;
+            width: 382px;
+        }
+        .dropdown {
+            display: inline-block;
+            border: none;
+        }
+        .dd-btn {
+            background-color: transparent;
+            color: black;
+            font-size: 16px;
+            border: none;
+        }
+        .dd-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: calc(100.00% - 30px);
+            top: 34px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dd-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dd-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dd-content {display: block;}
+    </style>
+    <script>
+        //add some texas statutes
+        //title, code, sect, name, year
+        var statutes = [["42","U.S.C","7706(a)","AUTHORIZATION OF APPROPRIATIONS", "1994"],
+                      ["42","U.S.C.","1771", "CONGRESSIONAL DECLARATION OF PURPOSE", "1966"],
+                      ["3", "U.S.C.","1","TIME OF APPOINTING ELECTORS", "1948"],
+                      ["21","U.S.C.","1572","DEFINITIONS","2000"],
+                      ["52", "U.S.C.","10701", "ENFORCEMENT OF TWENTY-SIXTH AMENDMENT", "1975"],
+                      ["54", "U.S.C", "320201","NATIONAL MONUMENTS", "2014"]];
+
+        function validateCitation(title, section, code, year) {
+            let regex1 = /[^a-zA-Z0-9\ \)\(]+/;
+            let regex2 = /[^a-zA-Z0-9\.,\ ]+/;
+            let errorString = "";
+            if (isNaN(Number(title)) || Number(title) < 0 || Math.ceil(Number(title)) !== Number(title)) {
+                errorString += 'Title must be a positive integer \n';
+            }
+            if (section === "") {
+                errorString += 'Section must not be empty \n';
+            }
+            if (section.match(regex1) !== null) {
+                errorString += 'Section must not include any special characters \n';
+            }
+            if (code === "") {
+                errorString += 'Code must not be empty \n';
+            }
+            if (code.match(regex2) !== null) {
+                errorString += 'Code must not include any special characters \n';
+            }
+            if (isNaN(Number(year)) || Math.ceil(Number(year)) !== Number(year)) {
+                errorString += 'Year must be a positive integer \n';
+            }
+            if (!(1791 < Number(year) < 2020)) {
+                errorString += 'Year must be between 1791-2020 \n';
+            }
+            if (errorString.length !== 0) {
+                alert(errorString);
+                return false;
+            }
+            return true;
+        }
+        
+        function generateCitation(){
+            var citation;
+            //document.getElementById("testName").setAttribute("placeholder", result);
+            var style = document.getElementById("sty").innerHTML.substr(7);
+            var title = document.getElementById("title").value;
+            var sect = document.getElementById("section").value;
+            var code = document.getElementById("code").value;
+            var year = document.getElementById("year").value;
+
+            if (validateCitation(title, sect, code, year)) {
+                document.getElementById("citation").value = citeStatutes(title, code, sect, year, style);
+            }
+        }
+
+        function citeStatutes(title, code, sect, year, style){
+            var citation = "";
+            switch(style){
+                case "US":
+                citation = title+" "+code+" \u00a7 "+sect+" ("+year+")";
+                break;
+                case "TX":
+                citation ="Tex. Penal Code \u00a7 "+sect+" ("+year+")";
+                break;
+            }
+            google.script.run.setCitation(citation);
+            return citation;
+        }
+
+        var caseData; //contains result
+        function changeStyle(style){
+            switch(style){
+                case 1:
+                    var div = document.getElementById("sty");
+                    div.innerHTML = "Style: US";
+                    break;
+                case 2:
+                    var div = document.getElementById("sty");
+                    div.innerHTML = "Style: TX";
+                    break;
+            }
+        }
+
+        function onSuccessAutoFill(result){
+            caseData = result;
+            changeStyle(1);
+            document.getElementById("title").setAttribute("value", result['title']);
+            document.getElementById("section").setAttribute("value", result['sect']);
+            document.getElementById("code").setAttribute("value", result['code']);
+            document.getElementById("year").setAttribute("value", result['year']);  
+        }
+
+        function initializeParams(){
+            google.script.run.withSuccessHandler(onSuccessAutoFill).getDataFromDialog();
+        }
+
+
+    </script>
+</head>
+<body onLoad="initializeParams()">
+    <div class="rectangle-1 border-class-1">
+        <div class="group-18">
+            <div class="headerRectangle">
+                <div class="bar-none-citations font-class-1">Bar None Citations</div>
+                <div class="copy-paste-citation font-class-1">Copy &amp; Paste Citation:</div>
+                <input type="text" class="font-class-1" id="citation" placeholder="citation will go here...">
+                <img class="legal-icon" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/legalicon-2@1x.png"/>
+            </div>
+            <!------------------------Drop Down Menu-------------------------------------------------->
+            <div class="ddMenu dropdown">
+                <button id="sty" class="court-style font-class-1 dd-btn">Style: </button>
+                <div class="dd-content">
+                    <a class="font-class-1" id="SC" onclick="changeStyle(1)" href="#">US</a>
+                    <a class="font-class-1" id="TX" onclick="changeStyle(2)" href="#">TX</a>
+                </div>
+                <div class="group-6">
+                <img class="polygon-1" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/polygon-1@1x.png"/>
+                <img class="polygon-2" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/polygon-2@1x.png"/>
+                </div>
+            </div>
+            <!------------------------Text Fields-------------------------------------------------->
+            <div class="title">Title:</div>
+            <input type=text id="title" class="title-TB border-class-1" name="name" placeholder="">
+            <div class="code">Code Abbr:</div>
+            <input type=text id="code" class="code-TB border-class-1" name="page" placeholder="">
+            <div class="section">Section:</div>
+            <input type=text id="section" class="section-TB border-class-1" name="page" placeholder="">
+            <div class="year">Year:</div>
+            <input type=text id="year" class="year-TB border-class-1" name="page" placeholder="">
+            <!------------------------Submit Button-------------------------------------------------->
+            <input type="submit" class="generate-citation submit-rectangle" value="Generate Citation" onclick="generateCitation()">
+        </div>
+    </div>
+</body>
+</html>

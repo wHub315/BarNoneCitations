@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Details</title>
+    <!-- <link rel="stylesheet" href="popup.css"> -->
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+        @import url('https://fonts.googleapis.com/css?family=Segoe+UI:400');
+        * {
+        box-sizing: border-box;
+        }
+        .bar-none-citations {
+        background-color: transparent;
+        color: var(--alto);
+        font-size: 18px;
+        height: 26px;
+        left: calc(25.84% - 39px);
+        line-height: 18px;
+        position: absolute;
+        text-align: left;
+        top: 11px;
+        white-space: nowrap;
+        width: 151px;
+        }
+        .border-class-1 {
+        border: 1px solid var(--dove-gray);
+        }
+        .component-2-2 {
+        background-color: transparent;
+        height: calc(100.00% - 14px);
+        left: 37px;
+        position: absolute;
+        top: 7px;
+        width: 148px;
+        }
+        .copy-paste-citation {
+        background-color: transparent;
+        bottom: -4px;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 10px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 150px;
+        }
+        #citation {
+        bottom: -40px;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 20px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 330px;
+        }
+        .court-reporter {
+        background-color: transparent;
+        bottom: calc(44.58% - 10px);
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 22px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 104px;
+        }
+        .us-ellipse {
+        background-color: transparent;
+        bottom: calc(38.05% - 5px);
+        height: 13px;
+        left: 48px;
+        position: absolute;
+        width: 13px;
+        }
+        .sct-ellipse {
+        background-color: transparent;
+        bottom: calc(38.05% - 5px);
+        height: 13px;
+        left: calc(33.14% - 4px);
+        position: absolute;
+        width: 13px;
+        }
+        .le2d-ellipse {
+        background-color: transparent;
+        bottom: calc(38.05% - 5px);
+        height: 13px;
+        position: absolute;
+        right: calc(47.55% - 13px);
+        width: 13px;
+        }
+        .fed-ellipse{
+        background-color: transparent;
+        bottom: calc(38.05% - 5px);
+        height: 13px;
+        position: absolute;
+        right: calc(47.55% - 90px);
+        width: 13px;
+        }
+        .tx-ellipse{
+        background-color: transparent;
+        bottom: calc(38.05% - 36px);
+        height: 13px;
+        position: absolute;
+        right: calc(40.55% + 60px);
+        width: 13px;
+        }
+        .tx{
+        background-color: transparent;
+        bottom: calc(36.91% - 39px);
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: calc(40.92% + 10px);
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 27px;
+        }
+        .font-class-1 {
+        font-family: 'Segoe UI', Helvetica, Arial, serif;
+        font-style: normal;
+        font-weight: 400;
+        }
+        .generate-citation {
+        bottom: calc(24.10% - 30px);
+        color: white;
+        font-size: 16px;
+        height: 23px;
+        line-height: 16px;
+        position: absolute;
+        right: calc(49.15% - 60px);
+        text-align: left;
+        white-space: nowrap;
+        width: 126px;
+        }
+        .group-18 {
+        background-color: transparent;
+        flex-shrink: 0;
+        height: 465px;
+        position: relative;
+        width: 362px;
+        }
+        .group-6 {
+        background-color: transparent;
+        bottom: calc(46.15% - 10px);
+        height: 22px;
+        position: absolute;
+        right: 16px;
+        width: 8px;
+        }
+        .ddMenu {
+        background-color: var(--concrete);
+        border: 1px solid var(--dove-gray);
+        height: 35px;
+        left: 22px;
+        position: absolute;
+        top: 52px;
+        width: calc(100.00% - 42px);
+        }
+        .le2d {
+        background-color: transparent;
+        bottom: calc(36.91% - 8px);
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        line-height: 15px;
+        position: absolute;
+        right: calc(35.31% - 14px);
+        text-align: left;
+        white-space: nowrap;
+        width: 40px;
+        }
+        .legal-icon {
+        background-color: transparent;
+        height: 39px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 41px;
+        }
+        .name {
+        background-color: transparent;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 20px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        top: calc(25.85% - 6px);
+        white-space: nowrap;
+        width: 45px;
+        }
+        .page {
+        background-color: transparent;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        line-height: 15px;
+        position: absolute;
+        right: calc(49.85% - 18px);
+        text-align: left;
+        top: calc(35.10% - 8px);
+        white-space: nowrap;
+        width: 37px;
+        }
+        .polygon-1 {
+        background-color: transparent;
+        height: 9px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        }
+        .polygon-2 {
+        background-color: transparent;
+        bottom: 0px;
+        height: 9px;
+        position: absolute;
+        width: 100%;
+        }
+        .volume-TB {
+        background-color: white;
+        height: 31px;
+        left: calc(25.52% - 19px);
+        position: absolute;
+        top: calc(35.25% - 11px);
+        width: 74px;
+        }
+        .year-TB{
+        background-color: white;
+        height: 31px;
+        left: calc(25.78% - 19px);
+        position: absolute;
+        top: calc(45.62% - 14px);
+        width: 73px;
+        }
+        .court{
+        background-color: transparent;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        line-height: 15px;
+        position: absolute;
+        right: calc(49.85% - 18px);
+        text-align: left;
+        top: calc(46.16% - 10px);
+        white-space: nowrap;
+        width: 37px;
+        }
+        .court-TB{
+        background-color: white;
+        height: 31px;
+        position: absolute;
+        right: calc(28.86% - 35px);
+        top: calc(45.62% - 14px);
+        width: 80px;
+        }
+        .submit-rectangle {
+        background-color: blue;
+        bottom: calc(22.46% - 30px);
+        height: 45px;
+        position: absolute;
+        right: calc(49.18% - 60px);
+        width: 145px;
+        }
+        .name-TB {
+        background-color: white;
+        height: 31px;
+        position: absolute;
+        right: 23px;
+        top: calc(24.88% - 8px);
+        width: 267px;
+        }
+        .page-TB {
+        background-color: white;
+        height: 31px;
+        position: absolute;
+        right: calc(28.86% - 18px);
+        top: calc(35.25% - 11px);
+        width: 62px;
+        }
+        .s-ct {
+        background-color: transparent;
+        bottom: calc(36.91% - 8px);
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: calc(42.17% - 12px);
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 28px;
+        }
+        .court-style {
+        background-color: transparent;
+        color: black;
+        font-size: 16px;
+        height: calc(100.00% + 2px);
+        left: 10px;
+        line-height: 16px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: calc(100.00% + 2px);
+        }
+        .us {
+        background-color: transparent;
+        bottom: calc(36.91% - 8px);
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: calc(21.92% - 6px);
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 27px;
+        }
+        .fed {
+        background-color: transparent;
+        bottom: calc(36.91% - 8px);
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: calc(21.92% + 205px);
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        white-space: nowrap;
+        width: 27px;
+        }
+        
+        .volume {
+        background-color: transparent;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 10px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        top: calc(36.00% - 8px);
+        white-space: nowrap;
+        width: 55px;
+        }
+        .year {
+        background-color: transparent;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 33px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        top: calc(46.16% - 10px);
+        white-space: nowrap;
+        width: 33px;
+        }
+        :root {
+        --alto: rgba(226,218,218,1.0);
+        --concrete: rgba(242,242,242,1.0);
+        --mahogany: rgba(80,0,0,1.0);
+        --dove-gray: rgba(112,112,112,1.0);
+        }
+
+        .border-class-1 {
+        border: 1px solid var(--dove-gray);
+        }
+        .rectangle-1 {
+        flex-shrink: 0;
+        height: 568px;
+        width: 382px;
+        }
+        .headerRectangle {
+        background-color: var(--mahogany);
+        flex-shrink: 0;
+        height: 40px;
+        width: 382px;
+        }
+        .dropdown {
+        display: inline-block;
+        border: none;
+        }
+        .dd-btn {
+        background-color: transparent;
+        color: black;
+        font-size: 16px;
+        border: none;
+        }
+        .dd-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: calc(100.00% - 30px);
+        top: 34px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+        .dd-content a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+        .dd-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dd-content {display: block;}
+    </style>
+    <script>
+        //usCite, sctCite, ledCite, term, caseName
+      var scCases = [["329 U.S. 1", "67 S.Ct. 6", "91 L.Ed. 3", "1946", "HALLIBURTON OIL WELL CEMENTING CO. v. WALKER"],
+                      ["444 U.S. 507","100 S.Ct. 763","62 L.Ed.2d 704","1979", "SNEPP v. UNITED STATES"],
+                      ["530 U.S. 290", "120 S.Ct. 2266", "147 L.Ed.2d 295", "1999", "SANTA FE INDEPENDENT SCHOOL DISTRICT v. JANE DOE"],
+                      ["575 U.S. 480", "135 S.Ct. 1645","191 L.Ed.2d 607","2014","MACH MINING, LLC, v. EQUAL EMPLOYMENT OPPORTUNITY COMMISSION"],
+                      ["", "140 S.Ct. 2019", "207 L.Ed.2d 951", "2019", "TRUMP v. MAZARS USA, LLP"]];
+      //circuit court, fCite(volume F. page), name, year
+      var fedCases = [["3d Cir.", "350 F. 13", "CARDONICK, CAROL v. STELLER, ALEXIS", "1988"],
+                      ["9d Cir.", "360 F. 2", "GEORGE v. LONG BEACH CITY", "1991"],
+                      ["9d Cir.", "310 F. 2", "FIREMANS FUND INS v. COMPANIA MEXICA", "1991"],
+                      ["4d Cir.", "220 F. 1345", "USA v. LEWIS, ET AL", "1992"],
+                      ["4d Cir.", "365 F. 1332", "PARRISH v. WAL-MART STORES", "1992"]];
+      //court, fCite(volume F. page), name, year
+      var texCases = [["Tex. App.—Waco", "228 S.W.3d 292", "CURRY v. STATE", "2007"],
+                      ["Tex. App. – Houston [1st Dist.]", "893 S.W.3d 559", "VILLERREAL v. STATE", "1994"],
+                      ["Tex. Crim. App.", "138 S.W.3d 334", "MENDEZ v. STATE", "2004"],
+                      ["Tex.", "142 S.W.3d 310", "CITY OF DALLAS v. JENNINGS", "2004"],
+                      ["Tex.App.—Houston [14th Dist.]", "57 S.W.3d 646 ", "GOODIE v. HOUSTON INDEPENDENT SCHOOL DIST", "2001"]];
+
+        function validateCitation(page, year, volume, court, style) {
+            let errorString = "";
+            if (isNaN(Number(page)) || Number(page) < 0 || Math.ceil(Number(page)) !== Number(page)) {
+                errorString += 'Page must be a positive integer \n';
+            }
+            if (isNaN(Number(year)) || Math.ceil(Number(year)) !== Number(year)) {
+                errorString += 'Year must be a positive integer \n';
+            }
+            if (!(1791 < Number(year) < 2020)) {
+                errorString += 'Year must be between 1791-2020 \n';
+            }
+            if (isNaN(Number(volume)) || Number(volume) < 0 || Math.ceil(Number(volume)) !== Number(volume)) {
+                errorString += 'Volume must be a positive integer \n';
+            }
+            if (style !== "SC" && court === "") {
+                errorString += 'Court must have an input \n';
+            }
+            if (errorString.length !== 0) {
+                alert(errorString);
+                return false;
+            }
+            return true;
+        }
+
+        function generateCitation(){
+            var citation;
+            //document.getElementById("testName").setAttribute("placeholder", result);
+            var style = document.getElementById("sty").innerHTML.substr(7);
+            if(style[0] == 'S'){
+                style = "SC";
+            }
+            else if(style[0] == 'T'){
+                style = "TX";
+            }
+            else{
+                style = "FED";
+            }
+            var name = document.getElementById("name").value;
+            var reporter;
+            var elements = document.getElementsByName("court-reporter"); 
+            for(i = 0; i < elements.length; i++) { 
+                if(elements[i].checked) 
+                    reporter = elements[i].value; 
+            }
+            var page = document.getElementById("pg").value;
+            var year = document.getElementById("year").value;
+            var volume = document.getElementById("vol").value;
+            var court = document.getElementById("court").value;
+
+            if (validateCitation(page, year, volume, court, style)) {
+                citation = citeCase(name, volume, reporter, page, year, style, court);
+                document.getElementById("citation").value = citation;
+            }
+        }
+
+        function citeCase(name, vol, reporter, page, year, style, court){
+            var citation;
+            switch(style){
+                case "SC":
+                citation = name +", "+vol+" "+reporter+" "+page+" ("+year+")";
+                break;
+                case "TX":
+                citation = name +", "+vol+" "+reporter+" "+page+" ("+court+" "+year+")";
+                break;
+                case "FED":
+                citation = name +", "+vol+" "+reporter+" "+page+" ("+court+" "+year+")";
+                break;
+            }
+            google.script.run.setCitation(citation);
+            return citation;
+        }
+
+        function changeStyle(style){
+            switch(style){
+                case 1:
+                    var div = document.getElementById("sty");
+                    div.innerHTML = "Style: Supreme Court Cases";
+                    document.getElementById("us").disabled = false; 
+                    document.getElementById("sct").disabled = false;
+                    document.getElementById("le2d").disabled = false;
+                    document.getElementById("sw3d").disabled = true; 
+                    document.getElementById("f").disabled = true;
+                    document.getElementById("court").disabled = true;
+                    break;
+                case 2:
+                    var div = document.getElementById("sty");
+                    div.innerHTML = "Style: Texas Court Cases";
+                    document.getElementById("court").disabled = false;
+                    document.getElementById("sw3d").disabled = false;
+                    document.getElementById("us").disabled = true; 
+                    document.getElementById("sct").disabled = true;
+                    document.getElementById("le2d").disabled = true; 
+                    document.getElementById("f").disabled = true;
+                    break;
+                case 3:
+                    var div = document.getElementById("sty");
+                    div.innerHTML = "Style: Federal Court Cases";
+                    document.getElementById("court").disabled = false;
+                    document.getElementById("f").disabled = false;
+                    document.getElementById("us").disabled = true; 
+                    document.getElementById("sct").disabled = true;
+                    document.getElementById("le2d").disabled = true; 
+                    document.getElementById("sw3d").disabled = true;
+                    break;
+            }
+        }
+
+        var caseData;   //contains result map for autofill
+        function changeReporter(style){
+            if (style == 1) {
+                document.getElementById("vol").setAttribute("value", caseData['usVol']);
+                document.getElementById("pg").setAttribute("value", caseData['usPage']);
+            }else if (style == 3) {
+                document.getElementById("vol").setAttribute("value", caseData['ledVol']);
+                document.getElementById("pg").setAttribute("value", caseData['ledPage']);
+            } else {
+                document.getElementById("vol").setAttribute("value", caseData['sctVol']);
+                document.getElementById("pg").setAttribute("value", caseData['sctPage']);
+            }
+        }
+
+        function onSuccessAutoFill(result){
+            // alert(result['caseName']);
+            caseData = result;
+            if (result['style'] == "caseSC") {
+                changeStyle(1);
+                document.getElementById("vol").setAttribute("value", result['usVol']);
+                document.getElementById("pg").setAttribute("value", result['usPage']);
+                document.getElementById("year").setAttribute("value", result['term']);
+                document.getElementById("us").checked = true;
+            }else if (result['style'] == "caseTX") {
+                changeStyle(2);
+                document.getElementById("vol").setAttribute("value", result['vol']);
+                document.getElementById("pg").setAttribute("value", result['page']);
+                document.getElementById("year").setAttribute("value", result['term']);
+                document.getElementById("court").setAttribute("value", result['court']);
+                document.getElementById("sw3d").checked = true;
+            } else {
+                changeStyle(3);
+                document.getElementById("vol").setAttribute("value", result['vol']);
+                document.getElementById("pg").setAttribute("value", result['page']);
+                document.getElementById("year").setAttribute("value", result['term']);
+                document.getElementById("court").setAttribute("value", result['court']);
+                document.getElementById("f").checked = true;
+            }
+            document.getElementById("name").setAttribute("value", result['caseName']);  
+        }
+
+        function initializeParams(){
+            google.script.run.withSuccessHandler(onSuccessAutoFill).getDataFromDialog();
+        }
+
+    </script>
+</head>
+<body onLoad="initializeParams()">
+    <div class="rectangle-1 border-class-1">
+        <div class="group-18">
+            <div class="headerRectangle">
+                <div class="bar-none-citations font-class-1">Bar None Citations</div>
+                <div class="copy-paste-citation font-class-1">Copy &amp; Paste Citation:</div>
+                <input type="text" class="font-class-1" id="citation" placeholder="citation will go here...">     
+                <img class="legal-icon" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/legalicon-2@1x.png"/>
+            </div>
+            <!------------------------Drop Down Menu-------------------------------------------------->
+            <div class="ddMenu dropdown">
+                <button id="sty" class="court-style font-class-1 dd-btn">Style: </button>
+                <div class="dd-content">
+                    <a class="font-class-1" id="SC" onclick="changeStyle(1)" href="#">Supreme Court Cases</a>
+                    <a class="font-class-1" id="TX" onclick="changeStyle(2)" href="#">Texas Court Case</a>
+                    <a class="font-class-1" id="FED" onclick="changeStyle(3)" href="#">Federal Court Case</a>
+                </div>
+                <div class="group-6">
+                <img class="polygon-1" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/polygon-1@1x.png"/>
+                <img class="polygon-2" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/polygon-2@1x.png"/>
+                </div>
+            </div>
+            <!------------------------Text Fields-------------------------------------------------->
+            <div class="name font-class-1">Name:</div>
+            <input id="name" type=text class="name-TB border-class-1" value="" name="name" placeholder="">
+            <div class="page font-class-1">Page:</div>
+            <input type=text class="page-TB border-class-1" id="pg" name="page" placeholder="">
+            <div class="volume font-class-1">Volume:</div>
+            <input type=text class="volume-TB border-class-1" id="vol" name="page" placeholder="">
+            <div class="year font-class-1">Year:</div>
+            <input type=text class="year-TB border-class-1" id="year" name="page" placeholder="">
+            <div class="court font-class-1">Court:</div>
+            <input type=text class="court-TB border-class-1" id="court" name="page" placeholder="">
+            <!------------------------Radio Buttons-------------------------------------------------->
+            <div class="court-reporter font-class-1">Court Reporter:</div>
+            <input type="radio" id="us" class="us-ellipse" name="court-reporter" value="U.S." onclick="changeReporter(1)">
+            <div class="us font-class-1">U.S.</div>
+            <input type="radio"  id="sct" class="sct-ellipse" name="court-reporter" value="S.Ct" onclick="changeReporter(2)">
+            <div class="s-ct font-class-1">S.Ct</div>
+            <input type="radio" id="le2d" class="le2d-ellipse" name="court-reporter" value="L.E.2d" onclick="changeReporter(3)">
+            <div class="le2d font-class-1">L.E.2d</div>
+            <input type="radio"  id="f" class="fed-ellipse" name="court-reporter" value="F.">
+            <div class="fed font-class-1">F.</div>
+            <input type="radio"  id="sw3d" class="tx-ellipse" name="court-reporter" value="S.W.3d">
+            <div class="tx font-class-1">S.W.3d</div>
+            <!------------------------Submit Button-------------------------------------------------->
+            <input type="submit" class="generate-citation font-class-1 submit-rectangle" value="Generate Citation" onclick="generateCitation()">
+        </div>
+    </div>
+</body>
+</html>

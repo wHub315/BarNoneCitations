@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Citations</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        .dialogue-box {
+            background-color: transparent;
+            font-size: 14px;
+            font-family: 'Roboto';
+            height: 220px;
+            width: 290px;
+            position: absolute;
+            border: 1px solid lightgrey;
+            overflow: scroll;
+        }
+        .close-button {
+            right: 20px;
+            bottom: 20px;
+            position: absolute;
+            font-family: 'Roboto';
+            font-size: 16px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        function onSuccess (result) {
+            let resultString = "<ul>";
+            if(!result.includes("|||")){
+                resultString += "<li>"+result+"</li></br>";
+            }
+            else{
+                let citeList = result.split("|||");
+                for(var i of citeList){
+                    resultString += "<li>"+i+"</li></br>";
+                }
+            }
+            resultString += "</ul>";
+            var div = document.getElementById("citationsList");
+            div.innerHTML = resultString;
+        }
+
+        function loadCitations() {
+            google.script.run.withSuccessHandler(onSuccess).getRecentCitation();
+        }
+    </script>
+</head>
+<body onload="loadCitations()">
+    <div id="citationsList" class="dialogue-box">
+    </div>
+    <div class="close-button">
+        <input type="button" value="Close" onclick="google.script.host.close()"/>
+    </div>
+</body>
+</html>

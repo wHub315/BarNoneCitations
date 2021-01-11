@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+      @import url('https://fonts.googleapis.com/css?family=Segoe+UI:400');
+      .bar-none-citations {
+        background-color: transparent;
+        color: white;
+        font-size: 24px;
+        height: 42px;
+        line-height: 30px;
+        position: absolute;
+        right: 42px;
+        text-align: left;
+        top: 12px;
+        white-space: nowrap;
+        width: 200px;
+      }
+      .default-border {
+        border: 1px solid var(--dove-gray);
+      }
+      .header-button-text {
+        background-color: transparent;
+        color: black;
+        font-size: 16px;
+        height: calc(100.00% - 0px);
+        line-height: 22px;
+        position: absolute;
+        right: calc(46.15% - 0px);
+        text-align: center;
+        top: 7px;
+        white-space: nowrap;
+        width: 48px;
+      }
+      .search-field-container {
+        background-color: transparent;
+        height: 33px;
+        left: 30px;
+        position: absolute;
+        top: calc(22.76% - 8px);
+        width: 211px;
+      }
+      .enter-case-statue-name {
+  
+        font-size: 14px;
+        height: 28px;
+        left: 29px;
+        line-height: 16px;
+        position: absolute;
+        text-align: left;
+        top: calc(23.95% - 14px);
+        white-space: nowrap;
+        width: 163px;
+      }
+      .default-font {
+        font-family: 'Segoe UI', Helvetica, Arial, serif;
+        font-style: normal;
+        font-weight: 400;
+      }
+      .rules-button-container {
+        background-color: transparent;
+        height: 35px;
+        position: absolute;
+        right: 40px;
+        top: 62px;
+        width: 70px;
+      }
+      .header {
+        background-color: maroon;
+        flex-shrink: 0;
+        height: 547px;
+        margin-top: 0px;
+        position: relative;
+        width: 300px;
+      }
+      .statute-button-container {
+        background-color: transparent;
+        height: 35px;
+        position: absolute;
+        right: calc(47.24% - 65px);
+        top: 62px;
+        width: 70px;
+      }
+      .case-button-container {
+        background-color: transparent;
+        height: 35px;
+        left: 69px;
+        position: absolute;
+        top: 62px;
+        width: 70px;
+      }
+      .legal-icon {
+        background-color: transparent;
+        height: 45px;
+        left: 8px;
+        position: absolute;
+        top: 5px;
+        width: 45px;
+        border-color: transparent;
+      }
+      .search-container-location {
+        background-color: transparent;
+        height: calc(100.00% + 18px);
+        left: -9px;
+        position: absolute;
+        top: -6px;
+        width: calc(100.00% - 26px);
+      }
+      .header-buttons {
+        background-color: var(--pink-swan);
+        border-radius: 17px;
+        height: calc(100.00% - 1px);
+        left: 0px;
+        position: absolute;
+        top: 1px;
+        width: 100%;
+      }
+      .bottom-half {
+        background-color: white;
+        height: calc(100.00% - 173px);
+        left: 0px;
+        position: absolute;
+        top: 173px;
+        width: 300px;
+      }
+      .search-button {
+        background-color: transparent;
+        height: 51px;
+        position: absolute;
+        right: 22px;
+        top: calc(22.38% - 11px);
+        width: 80px;
+      }
+      .results-box {
+        background-color: white;
+        top: 215px;
+        height: 400px;
+        left: 22px;
+        position: absolute;
+        width: calc(100.00% - 52px);
+        overflow: scroll;
+      }
+      .rules {
+        background-color: transparent;
+        color: black;
+        font-size: 22px;
+        height: calc(100.00% - 3px);
+        line-height: 22px;
+        position: absolute;
+        right: calc(36.36% - 20px);
+        text-align: left;
+        top: 7px;
+        white-space: nowrap;
+        width: 54px;
+      }
+      .search {
+        background-color: transparent;
+        color: white;
+        font-size: 14px;
+        height: 34px;
+        line-height: 16px;
+        position: absolute;
+        right: calc(17.12% - 24px);
+        text-align: center;
+        top: calc(23.95% - 14px);
+        white-space: nowrap;
+        width: 68px;
+      }
+      .search-results {
+        background-color: transparent;
+        color: black;
+        font-size: 15px;
+        height: 22px;
+        left: 17px;
+        line-height: 15px;
+        position: absolute;
+        text-align: left;
+        top: calc(36.10% - 8px);
+        white-space: nowrap;
+        width: 100px;
+      }
+      .statute {
+        background-color: transparent;
+        color: black;
+        font-size: 22px;
+        height: calc(100.00% - 3px);
+        left: 13px;
+        line-height: 22px;
+        position: absolute;
+        text-align: left;
+        top: 7px;
+        white-space: nowrap;
+        width: calc(100.00% - 22px);
+      }
+      .search-results-button {
+        text-align: left !important;
+      }
+      .recent-citations {
+        bottom: -110px;
+        right: 28px;
+        position: absolute;
+      }
+      :root {
+        --alto: rgba(226,218,218,1.0);
+        --dove-gray: rgba(112,112,112,1.0);
+        --pink-swan: rgba(187,187,187,1.0);
+        --stack: rgba(138,138,138,1.0);
+      }
+    </style>
+    <script>
+      //usCite, sctCite, ledCite, term, caseName
+      var scCases = [["329 U.S. 1", "67 S.Ct. 6", "91 L.Ed. 3", "1946", "HALLIBURTON OIL WELL CEMENTING CO. v. WALKER"],
+                      ["444 U.S. 507","100 S.Ct. 763","62 L.Ed.2d 704","1979", "SNEPP v. UNITED STATES"],
+                      ["530 U.S. 290", "120 S.Ct. 2266", "147 L.Ed.2d 295", "1999", "SANTA FE INDEPENDENT SCHOOL DISTRICT v. JANE DOE"],
+                      ["575 U.S. 480", "135 S.Ct. 1645","191 L.Ed.2d 607","2014","MACH MINING, LLC, v. EQUAL EMPLOYMENT OPPORTUNITY COMMISSION"],
+                      ["591 U.S. _", "140 S.Ct. 2019", "207 L.Ed.2d 951", "2019", "TRUMP v. MAZARS USA, LLP"]];
+      //circuit court, cite(volume F. page), name, year
+      var fedCases = [["3d Cir.", "350 F. 13", "CARDONICK, CAROL v. STELLER, ALEXIS", "1988"],
+                      ["9d Cir.", "360 F. 2", "GEORGE v. LONG BEACH CITY", "1991"],
+                      ["9d Cir.", "310 F. 2", "FIREMANS FUND INS v. COMPANIA MEXICA", "1991"],
+                      ["4d Cir.", "220 F. 1345", "USA v. LEWIS, ET AL", "1992"],
+                      ["4d Cir.", "365 F. 1332", "PARRISH v. WAL-MART STORES", "1992"]];
+      //court, cite(volume F. page), name, year
+      var texCases = [["Tex. App.—Waco", "228 S.W.3d 292", "CURRY v. STATE", "2007"],
+                      ["Tex. App. – Houston [1st Dist.]", "893 S.W.3d 559", "VILLERREAL v. STATE", "1994"],
+                      ["Tex. Crim. App.", "138 S.W.3d 334", "MENDEZ v. STATE", "2004"],
+                      ["Tex.", "142 S.W.3d 310", "CITY OF DALLAS v. JENNINGS", "2004"],
+                      ["Tex.App.—Houston [14th Dist.]", "57 S.W.3d 646 ", "GOODIE v. HOUSTON INDEPENDENT SCHOOL DIST", "2001"]];
+      //title, code, sect, name, year
+      var statutes = [["42","U.S.C","7706(a)","AUTHORIZATION OF APPROPRIATIONS", "1994"],
+                      ["42","U.S.C.","1771", "CONGRESSIONAL DECLARATION OF PURPOSE", "1966"],
+                      ["3", "U.S.C.","1","TIME OF APPOINTING ELECTORS", "1948"],
+                      ["21","U.S.C.","1572","DEFINITIONS","2000"],
+                      ["52", "U.S.C.","10701", "ENFORCEMENT OF TWENTY-SIXTH AMENDMENT", "1975"],
+                      ["54", "U.S.C", "320201","NATIONAL MONUMENTS", "2014"]];
+
+      function parseSupremeCourt(index){
+          let params = [];
+          //US values
+          usCite = scCases[index][0];
+          var values = usCite.split(" ")
+          params.push(values[0]); //volume
+          usreporter = "";
+          for(var i = 1;i<values.length-1;i++){
+            usreporter += values[i]
+            if(i!=values.length-2){usreporter+=" ";}
+          }
+          params.push(usreporter);
+          params.push(values[values.length-1]); //page
+        //S.CT Values
+          scCite = scCases[index][1];
+          values = scCite.split(" ")
+          params.push(values[0]);
+          screporter = "";
+          for(var i = 1;i<values.length-1;i++){
+            screporter += values[i]
+            if(i!=values.length-2){screporter+=" ";}
+          }
+          params.push(screporter);
+          params.push(values[values.length-1]);
+        //L.Ed Values
+          ledCite = scCases[index][2];
+          values = ledCite.split(" ")
+          params.push(values[0]);
+          ledreporter = "";
+          for(var i = 1;i<values.length-1;i++){
+            ledreporter += values[i]
+            if(i!=values.length-2){ledreporter+=" ";}
+          }
+          params.push(ledreporter);
+          params.push(values[values.length-1]);
+          params.push(scCases[index][3]);
+          params.push(scCases[index][4]);
+          return params;
+        }
+
+      function parseFederal(index){
+        let params = [];
+        params.push(fedCases[index][0]);
+        let fedCite = fedCases[index][1];
+        let values = fedCite.split(" ");
+        params.push(values[0]);
+        params.push(values[values.length-1]);
+        let reporter = "";
+        for(var i = 1; i<values.length-1; i++){
+          reporter += values[i];
+          if(i!=values.length-2){
+            reporter+=" ";
+          }
+        }
+        params.push(reporter);
+        params.push(fedCases[index][2]);
+        params.push(fedCases[index][3]);
+        return params;
+      }
+
+      function parseTexas(index){
+        let params = [];
+        params.push(texCases[index][0]);
+        let texCite = texCases[index][1];
+        let values = texCite.split(" ");
+        params.push(values[0]);
+        params.push(values[values.length-1]);
+        let reporter = "";
+        for(var i = 1; i<values.length-1; i++){
+          reporter += values[i];
+          if(i!=values.length-2){
+            reporter+=" ";
+          }
+        }
+        params.push(reporter);
+        params.push(texCases[index][2]);
+        params.push(texCases[index][3]);
+        return params;
+      }
+      //title, code, sect, name, year
+      function parseStatutes(index){
+        let params = [];
+        params.push(statutes[index][0]);
+        params.push(statutes[index][1]);
+        params.push(statutes[index][2]);
+        params.push(statutes[index][3]);
+        params.push(statutes[index][4]);
+        return params;
+      }
+
+      var citeStyle = 0;
+      var resultString = "";
+
+      function loadRC(){
+        google.script.run.citationsPage();
+      }
+
+      function onSuccessSetRC(result){
+        if(resultString == ""){
+          resultString += result;
+        }
+        else{
+          resultString +=  "||| " + result;
+        }
+        google.script.run.withSuccessHandler(loadRC).setRecentCitation(resultString);
+      }
+
+      function onSuccessGetRC(result){
+        if(result!=null){
+          resultString = result;
+        }
+        google.script.run.withSuccessHandler(onSuccessSetRC).getCitation();
+      }
+
+      function addCitation(){
+        google.script.run.withSuccessHandler(onSuccessGetRC).getRecentCitation();
+      }
+
+      function customAlert(info) {
+        alert(info);
+      }
+
+      function searchSupremeCourt(case1){
+        let matches = [];
+        for (index = 0; index < scCases.length; index++) { 
+              if(scCases[index][4].toUpperCase().includes(case1.toUpperCase())){
+                  matches.push(index);
+              }   
+          }
+        return matches;
+      }
+
+      function searchFederal(case1){
+        let matches = [];
+        for (index = 0; index < fedCases.length; index++) { 
+              if(fedCases[index][2].toUpperCase().includes(case1.toUpperCase())){
+                  matches.push(index);
+              }   
+          }
+        return matches;
+      }
+
+      function searchTexas(case1){
+        let matches = [];
+        for (index = 0; index < texCases.length; index++) { 
+              if(texCases[index][2].toUpperCase().includes(case1.toUpperCase())){
+                  matches.push(index);
+              }   
+          }
+        return matches;
+      }
+
+      function searchStatutes(statute1) {
+        let matches = [];
+        for (index = 0; index < statutes.length; index++) { 
+              if(statutes[index][3].toUpperCase().includes(statute1.toUpperCase())){
+                  matches.push(index);
+              }   
+          }
+        return matches;
+      }
+      
+
+      function longestStringCase(results1, results2, results3, source1, source2, source3) {
+        let n = "";
+        let max = 0;
+        for (n of results1) {
+          if (source1[n][4].length > max) {
+            max = source1[n][4].length;
+          }
+        }
+        for (n of results2) {
+          if (source2[n][2].length > max) {
+            max = source2[n][2].length;
+          }
+        }
+        for (n of results3) {
+          if (source3[n][2].length > max) {
+            max = source3[n][2].length;
+          }
+        }
+        return max*6.85;
+      }
+
+      function longestStringStatute(results, source) {
+        let n = "";
+        let max = 0;
+        for (n of results) {
+          if (source[n][3].length > max) {
+            max = source[n][3].length;
+          }
+        }
+        return max*6.85;
+      }
+
+      function validateSearch(search) {
+        //var regex = new RegExp();
+        searchString = "";
+        searchString = search;
+        var regexArray = searchString.match(/[^a-zA-Z0-9\.,\ -]+/);
+        if (regexArray !== null) {
+          alert ('Case/Statute name must not include any special characters');
+          return 0;
+        }
+        return 1;
+      }
+
+      function searchClicked(style) {
+        //addCitation();
+        var div = document.getElementById('searchOrCite');
+        div.innerHTML = 'Search Results:';
+        var search = document.getElementById("searchText").value;
+        if (validateSearch(search)) {
+          var resultString = "";
+          var i;
+          var width;
+          div = document.getElementById("resultsboxid");
+          switch (style) {
+            case 0:
+              alert ("You need to choose whether you are citing a case or statute");
+              //alert(test);
+              break;
+            case 1:
+              var scResults = searchSupremeCourt(search);
+              var txResults = searchTexas(search);
+              var fedResults = searchFederal(search); 
+              width = longestStringCase(scResults, txResults, fedResults, scCases, texCases, fedCases);
+              // google.script.run.withSuccessHandler(customAlert).openSheet();
+              div.innerHTML = "";
+              resultString = div.innerHTML; 
+              let caseStyle = "";
+              for(i of scResults){
+                caseStyle = "caseSC";
+                div.innerHTML += '<input type="button" class="search-results-button" style="width:'+width+'px;" value="'+ scCases[i][4] +'" onclick="initParams(\''+i+'\', \''+caseStyle+'\')"></br>';
+              }
+              for(i of txResults){
+                caseStyle = "caseTX";
+                div.innerHTML += '<input type="button" class="search-results-button" style="width:'+width+'px;" value="'+ texCases[i][2]+'" onclick="initParams(\''+i+'\', \''+caseStyle+'\')"></br>';
+              }
+              for(i of fedResults){
+                caseStyle = "caseFED";
+                div.innerHTML += '<input type="button" class="search-results-button" style="width:'+width+'px;" value="'+ fedCases[i][2]+'" onclick="initParams(\''+i+'\', \''+caseStyle+'\')"></br>';
+              }
+              break;
+            case 2:
+              var statResults = searchStatutes(search);
+              width = longestStringStatute(statResults, statutes);
+              div.innerHTML = "";
+              resultString = div.innerHTML;
+              for(i of statResults){
+                div.innerHTML += '<input type="button" class="search-results-button" style="width:'+width+'px;" value="'+ statutes[i][3]+'" onclick="initParams(\''+i+'\', \''+"statute"+'\')"></br>';
+              }
+              break;
+          }
+        }
+      }  
+
+      function iconClicked() {
+        addCitation();
+        var div = document.getElementById('searchOrCite');
+        div.innerHTML = 'Recent Citations:';
+        var resultString; 
+        resultString = "<ul>";
+        var i;
+        for(i of recentCitations){
+          resultString +="<li>" + i + "</li></br>";
+        }
+        resultString+="</ul>";
+        // alert (resultString);
+        var div = document.getElementById("resultsboxid");
+        div.innerHTML = resultString;
+      }
+
+      function initParams(i, style){
+        let params = []
+        if(style == "caseSC"){
+          params = parseSupremeCourt(i);
+          google.script.run.setDataFromSideBar(params, style);
+          google.script.run.showCaseDialog();
+        }
+        else if(style == "caseTX"){
+          params = parseTexas(i);
+          google.script.run.setDataFromSideBar(params, style);
+          google.script.run.showCaseDialog();
+        }
+        else if(style == "caseFED"){
+          params = parseFederal(i);
+          google.script.run.setDataFromSideBar(params, style);
+          google.script.run.showCaseDialog();
+        }
+        else{
+          params = parseStatutes(i);
+          google.script.run.setDataFromSideBar(params, style);
+          google.script.run.showStatuteDialog();
+        }
+      }
+
+      function generalClicked (index) {
+        switch(index) {
+          case 1:
+            searchClicked(citeStyle);
+            break;
+          case 2:
+            citeStyle = 1;
+            document.getElementById("case").style.background='#A9A9A9';
+            document.getElementById("statute").style.background='#f1f1f1';
+            // document.getElementById("rules").style.background='#f1f1f1';
+            break;
+          case 3:
+            citeStyle = 2;
+            document.getElementById("statute").style.background='#A9A9A9';
+            document.getElementById("case").style.background='#f1f1f1';
+            break;
+          case 5:
+            iconClicked();
+            break;
+          case 6:
+            addCitation();
+            break;
+        }
+    }     
+    </script>
+</head>
+<body>
+  <div class="header grid-child">
+    <h1 class="bar-none-citations default-font">Bar None Citations</h1>
+    <a onclick="generalClicked(5)">
+      <img class="legal-icon" src="https://anima-uploads.s3.amazonaws.com/projects/5f981fab6395527a14058a31/releases/5f981fb2e901303153a036cc/img/legalicon@1x.png"/>
+    </a>
+      <!-- <input type="submit" class = "legal-icon" value = "" onclick="generalClicked(5)"> -->
+      <div class="case-button-container">
+          <input type="button" id= "case" class = "case-button-container header-buttons default-border header-button-text default-font" value="Case" onclick="generalClicked(2)">
+      </div>
+      <div class="statute-button-container">
+        <input type="button" id="statute" class = "header-buttons default-border header-button-text default-font" value="Statute" onclick="generalClicked(3)">
+      </div>
+      
+      <input type="text" class ="enter-case-statue-name" name="search-name" id="searchText" placeholder="Enter case or statue name">
+      <input type="button" class = "search-button search action" value="Search"  onclick="generalClicked(1)">
+      <div class="bottom-half"></div>
+      <div id="searchOrCite" class="search-results default-font">Search Results:</div>
+      <div id="resultsboxid" class="results-box default-border"></div> 
+      <input type="button" class = "recent-citations" value="Recent Citations" onclick="generalClicked(6)">
+    </div>
+</body>
+</html>
